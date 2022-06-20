@@ -1,0 +1,60 @@
+﻿@model Kalkulatol.Models.SkladnikModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h3 class="display-2">Czy na pewno chcesz usunąć składnik?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkladnikId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkladnikId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkladnikName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkladnikName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkladnikProtPer100)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkladnikProtPer100)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkladnikCarbPer100)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkladnikCarbPer100)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkladnikFatPer100)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkladnikFatPer100)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkladnikKcal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkladnikKcal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SkladnikIlosc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SkladnikIlosc)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Usuń" class="btn btn-danger" /> 
+    </form>
+    <a class="btn-close" asp-action="Index"></a>
+</div>

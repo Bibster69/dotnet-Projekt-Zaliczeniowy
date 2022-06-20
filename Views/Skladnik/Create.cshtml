@@ -1,0 +1,52 @@
+﻿@model Kalkulatol.Models.SkladnikModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="display-2">Dodaj Skladnik</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SkladnikName" class="control-label"></label>
+                <input asp-for="SkladnikName" class="form-control" />
+                <span asp-validation-for="SkladnikName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkladnikProtPer100" class="control-label"></label>
+                <input asp-for="SkladnikProtPer100" class="form-control" />
+                <span asp-validation-for="SkladnikProtPer100" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkladnikCarbPer100" class="control-label"></label>
+                <input asp-for="SkladnikCarbPer100" class="form-control" />
+                <span asp-validation-for="SkladnikCarbPer100" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkladnikFatPer100" class="control-label"></label>
+                <input asp-for="SkladnikFatPer100" class="form-control" />
+                <span asp-validation-for="SkladnikFatPer100" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkladnikIlosc" class="control-label"></label>
+                <input asp-for="SkladnikIlosc" class="form-control" />
+                <span asp-validation-for="SkladnikIlosc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn-close" asp-action="Index"></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

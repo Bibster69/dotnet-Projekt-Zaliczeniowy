@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Kalkulatol.Models.SkladnikModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="display-2">Lista Składników</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Dodaj Składnik</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SkladnikName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td style="width:70%">
+                @Html.DisplayFor(modelItem => item.SkladnikName)
+                Kcal @Html.DisplayFor(modelItem => item.SkladnikKcal)
+            </td>
+            <td style="width:40%">
+                @Html.ActionLink("Edytuj", "Edit", new { id=item.SkladnikId }, new {@class = "btn btn-success"}) 
+                @Html.ActionLink("Szczegóły", "Details", new {  id=item.SkladnikId }, new {@class = "btn btn-info"}) 
+                @Html.ActionLink("Usuń", "Delete", new { id=item.SkladnikId }, new {@class = "btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
